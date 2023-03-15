@@ -1,0 +1,8 @@
+FUNCTION "tenure"(hire_date date )
+       RETURNS Op_tenure integer
+       LANGUAGE SQLSCRIPT 
+       SQL SECURITY INVOKER AS 
+BEGIN 
+   
+  Op_tenure = days_between(:hire_date, CURRENT_DATE);
+END;

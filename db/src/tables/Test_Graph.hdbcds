@@ -1,0 +1,14 @@
+
+context Test_Graph{
+  entity MEMBERS {
+    key NAME: hana.VARCHAR(100) not null;
+    TYPE: hana.VARCHAR(100);
+    RESIDENCE: hana.VARCHAR(100);
+  };
+  entity RELATIONSHIPS {
+    key KEY: Integer not null;
+    SOURCE: hana.VARCHAR(100) not null;
+    TARGET: hana.VARCHAR(100) not null;
+	TYPE: hana.VARCHAR(100);
+  };
+};

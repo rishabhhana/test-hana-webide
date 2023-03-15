@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" id="CV_TestOLAP" applyPrivilegeType="NONE" dataCategory="CUBE" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_TestOLAP"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="Employee.Employee_Data">
+    <resourceUri>Employee.Employee_Data</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="Employee_ID"/>
+      <viewAttribute id="Employee_City"/>
+      <viewAttribute id="Joining_Month"/>
+      <viewAttribute id="Joining_Year"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Employee.Employee_Data"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="Employee_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Employee_ID"/>
+    </attribute>
+    <attribute id="Employee_City" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_City"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Employee_City"/>
+    </attribute>
+    <attribute id="Joining_Month" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Joining_Month"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Joining_Month"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="Joining_Year" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Joining_Year"/>
+      <measureMapping columnObjectName="Projection_1" columnName="Joining_Year"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures>
+    <measure id="RES_1" hidden="false" order="5" aggregationType="sum" datatype="INTEGER" length="" scale="0" baseMeasure="Joining_Year">
+      <descriptions defaultDescription=""/>
+      <restriction logicalOperator="AND">
+        <filter xsi:type="Privilege:AttributeFilter" attributeName="Employee_City">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="Bangalore"/>
+        </filter>
+        <attributeName>Employee_City</attributeName>
+      </restriction>
+      </measure>
+  </restrictedMeasures>
+
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="127" y="227"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

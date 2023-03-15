@@ -1,0 +1,10 @@
+Employee_ID,Full_Name,Job_Title,Department,Business_Unit,Gender,Ethnicity,Age,Hire_Date
+E02002,Kai Le,Controls Engineer,Engineering,Manufacturing,Male,Asian,47,2022-02-05
+E02003,Robert Patel,Analyst,Sales,Corporate,Male,Asian,58,2013-10-23
+E02004,Cameron Lo,Network Administrator,IT,Research & Development,Male,Asian,34,2019-03-24
+E02005,Harper Castillo,IT Systems Architect,IT,Corporate,Female,Latino,39,2018-05-04
+E02006,Harper Dominguez,Director,Engineering,Corporate,Female,Latino,42,2005-06-18
+E02007,Ezra Vu,Network Administrator,IT,Manufacturing,Male,Asian,62,2004-04-22
+E02008,Jade Hu,Sr. Analyst,Accounting,Specialty Products,Female,Asian,58,2009-06-22
+E02009,Miles Chang,Analyst II,Finance,Corporate,Male,Asian,62,1999-02-19
+E02010,Gianna Holmes,System Administrator ,IT,Manufacturing,Female,Caucasian,38,2011-09-09

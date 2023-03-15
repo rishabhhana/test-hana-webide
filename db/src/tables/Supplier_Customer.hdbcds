@@ -1,0 +1,14 @@
+context Supplier_Customer {
+
+    /*@@layout{"layoutInfo":{"x":-393,"y":-86.5}}*/
+    entity Supplier {
+        first_name : String(20);
+        last_name  : String(20);
+    };
+
+    /*@@layout{"layoutInfo":{"x":-79,"y":-86.5}}*/
+    entity Customer {
+        first_name : String(20);
+        last_name  : String(20);
+    };
+};

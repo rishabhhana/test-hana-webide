@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Variable="http://www.sap.com/ndb/BiModelVariable.ecore" id="CV_TEST_TF_EMPLOYEE" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_TEST_TF_EMPLOYEE"/>
+<localVariables>
+  <variable id="IP_Age" parameter="true">
+    <descriptions defaultDescription=""/>
+    <variableProperties datatype="INTEGER" mandatory="false">
+      <valueDomain type="empty"/>
+      <selection multiLine="false" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+</localVariables>
+<variableMappings/>
+<dataSources/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:TableFunctionView" id="TableFunction_1" tableFunctionName="TF_EMP_DATA">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+    <variableMapping xsi:type="Variable:VariableMapping">
+      <targetVariable name="IP_AGE"/>
+      <localVariable>IP_Age</localVariable>
+    </variableMapping>
+  </calculationView>
+</calculationViews>
+<logicalModel id="TableFunction_1">
+  <attributes>
+    <attribute id="Gender" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gender"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Gender"/>
+    </attribute>
+    <attribute id="Ethinicity" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ethinicity"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Ethinicity"/>
+    </attribute>
+    <attribute id="Age" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Age"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Age"/>
+    </attribute>
+    <attribute id="Employee_City" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_City"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Employee_City"/>
+    </attribute>
+    <attribute id="Job_Title" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Job_Title"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Job_Title"/>
+    </attribute>
+    <attribute id="Full_Name" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Full_Name"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Full_Name"/>
+    </attribute>
+    <attribute id="Department" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Department"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Department"/>
+    </attribute>
+    <attribute id="Business_Unit" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business_Unit"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="Business_Unit"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="TableFunction_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

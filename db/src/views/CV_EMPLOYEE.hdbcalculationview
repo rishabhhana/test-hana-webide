@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_EMPLOYEE" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_EMPLOYEE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="Employee.Employee">
+    <resourceUri>Employee.Employee</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:HierarchyView" id="Hierarchy_1" function="HIERARCHY">
+    <viewAttributes>
+      <viewAttribute datatype="NVARCHAR" length="10" id="EMPLOYEE_ID"/>
+      <viewAttribute datatype="NVARCHAR" length="30" id="FULL_NAME"/>
+      <viewAttribute datatype="NVARCHAR" length="50" id="JOB_TITLE"/>
+      <viewAttribute datatype="NVARCHAR" length="50" id="DEPARTMENT"/>
+      <viewAttribute datatype="NVARCHAR" length="50" id="BUSINESS_UNIT"/>
+      <viewAttribute datatype="NVARCHAR" length="10" id="GENDER"/>
+      <viewAttribute datatype="NVARCHAR" length="20" id="ETHINICITY"/>
+      <viewAttribute datatype="INTEGER" id="AGE"/>
+      <viewAttribute datatype="DATE" length="10" id="HIRE_DATE"/>
+      <viewAttribute datatype="BIGINT" id="HIERARCHY_RANK"/>
+      <viewAttribute datatype="BIGINT" id="HIERARCHY_TREE_SIZE"/>
+      <viewAttribute datatype="BIGINT" id="HIERARCHY_PARENT_RANK"/>
+      <viewAttribute datatype="INTEGER" id="HIERARCHY_LEVEL"/>
+      <viewAttribute datatype="TINYINT" id="HIERARCHY_IS_CYCLE"/>
+      <viewAttribute datatype="TINYINT" id="HIERARCHY_IS_ORPHAN"/>
+      <viewAttribute datatype="NVARCHAR" length="10" id="PARENT_ID"/>
+      <viewAttribute datatype="NVARCHAR" length="30" id="NODE_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Employee.Employee">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPLOYEE_ID" source="Employee_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FULL_NAME" source="Full_Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOB_TITLE" source="Job_Title"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPARTMENT" source="Department"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSINESS_UNIT" source="Business_Unit"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GENDER" source="Gender"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ETHINICITY" source="Ethinicity"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AGE" source="Age"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HIRE_DATE" source="Hire_Date"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PARENT_ID" source="Employee_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NODE_ID" source="Full_Name"/>
+    </input>
+    <hierarchyParameterization/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Hierarchy_1">
+  <attributes>
+    <attribute id="EMPLOYEE_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_ID"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="EMPLOYEE_ID"/>
+    </attribute>
+    <attribute id="FULL_NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Full_Name"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="FULL_NAME"/>
+    </attribute>
+    <attribute id="JOB_TITLE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Job_Title"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="JOB_TITLE"/>
+    </attribute>
+    <attribute id="DEPARTMENT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Department"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="DEPARTMENT"/>
+    </attribute>
+    <attribute id="BUSINESS_UNIT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Business_Unit"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="BUSINESS_UNIT"/>
+    </attribute>
+    <attribute id="GENDER" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gender"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="GENDER"/>
+    </attribute>
+    <attribute id="ETHINICITY" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Ethinicity"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="ETHINICITY"/>
+    </attribute>
+    <attribute id="AGE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Age"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="AGE"/>
+    </attribute>
+    <attribute id="HIRE_DATE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Hire_Date"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="HIRE_DATE"/>
+    </attribute>
+    <attribute id="HIERARCHY_RANK" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY_RANK"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="HIERARCHY_RANK"/>
+    </attribute>
+    <attribute id="HIERARCHY_TREE_SIZE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY_TREE_SIZE"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="HIERARCHY_TREE_SIZE"/>
+    </attribute>
+    <attribute id="HIERARCHY_PARENT_RANK" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY_PARENT_RANK"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="HIERARCHY_PARENT_RANK"/>
+    </attribute>
+    <attribute id="HIERARCHY_LEVEL" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY_LEVEL"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="HIERARCHY_LEVEL"/>
+    </attribute>
+    <attribute id="HIERARCHY_IS_CYCLE" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY_IS_CYCLE"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="HIERARCHY_IS_CYCLE"/>
+    </attribute>
+    <attribute id="HIERARCHY_IS_ORPHAN" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY_IS_ORPHAN"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="HIERARCHY_IS_ORPHAN"/>
+    </attribute>
+    <attribute id="PARENT_ID" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARENT_ID"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="PARENT_ID"/>
+    </attribute>
+    <attribute id="NODE_ID" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NODE_ID"/>
+      <keyMapping columnObjectName="Hierarchy_1" columnName="NODE_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Hierarchy_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-60" y="259"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>   

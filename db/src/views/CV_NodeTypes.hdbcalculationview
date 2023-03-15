@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Variable="http://www.sap.com/ndb/BiModelVariable.ecore" id="CV_NodeTypes" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" defaultClient="$$client$$">
+<descriptions defaultDescription="CV_NodeTypes"/>
+<localVariables>
+  <variable id="IP_EID" parameter="true">
+    <descriptions defaultDescription=""/>
+    <variableProperties datatype="NVARCHAR" length="10" scale="null" mandatory="false">
+      <valueDomain type="AttributeValue">
+        <externalLikeStructureName>Employee.Employee</externalLikeStructureName>
+        <externalLikeElementName>Employee_ID</externalLikeElementName>
+      </valueDomain>
+      <selection multiLine="true" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+</localVariables>
+<variableMappings>
+  <mapping xsi:type="Variable:VariableMapping" dataSource="TF_TestEmployee">
+    <targetVariable name="IP_EID" resourceUri="TF_TestEmployee"/>
+    <localVariable>IP_EID</localVariable>
+  </mapping>
+</variableMappings>
+<dataSources>
+  <DataSource id="TF_TestEmployee" type="TABLE_FUNCTION">
+    <resourceUri>TF_TestEmployee</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="Employee_City"/>
+      <viewAttribute id="Joining_Year"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="TF_TestEmployee"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="Employee_City" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_City"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Employee_City"/>
+    </attribute>
+    <attribute id="Joining_Year" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Joining_Year"/>
+      <keyMapping columnObjectName="Projection_1" columnName="Joining_Year"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="9" y="200"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>  

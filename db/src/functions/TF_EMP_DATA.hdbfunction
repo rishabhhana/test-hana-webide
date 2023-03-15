@@ -1,0 +1,25 @@
+FUNCTION "TF_EMP_DATA"(ip_age integer )
+       RETURNS table
+       (
+	    "Full_Name" NVARCHAR(30),
+		"Job_Title" NVARCHAR(50),
+		"Department" NVARCHAR(50),
+		"Business_Unit" NVARCHAR(50),
+		"Gender" NVARCHAR(10),
+		"Ethinicity" NVARCHAR(20),
+		"Age" INTEGER ,
+		"Employee_City" NVARCHAR(20)
+       )
+       LANGUAGE SQLSCRIPT 
+       SQL SECURITY INVOKER AS 
+BEGIN 
+    
+    RETURN
+    SELECT A."Full_Name", A."Job_Title", A."Department", A."Business_Unit", A."Gender", A."Ethinicity", A."Age", B."Employee_City"
+    FROM "Employee.Employee" A
+    LEFT OUTER JOIN "Employee.Employee_Data" B
+    ON A."Employee_ID" = B."Employee_ID"
+    WHERE A."Age" > ip_age;
+    
+    
+END;

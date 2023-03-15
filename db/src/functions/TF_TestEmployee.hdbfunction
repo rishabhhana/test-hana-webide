@@ -1,0 +1,13 @@
+FUNCTION "TF_TestEmployee"(IP_EID NVARCHAR(20) )
+       RETURNS TABLE
+       (
+       	"Employee_City" NVARCHAR(20),
+       	"Joining_Year" NVARCHAR(4)
+       )
+       LANGUAGE SQLSCRIPT 
+       SQL SECURITY INVOKER AS 
+BEGIN 
+    RETURN
+    SELECT "Employee_City","Joining_Year" FROM "Employee.Employee_Data"
+    WHERE "Employee_ID" = :IP_EID;
+END;

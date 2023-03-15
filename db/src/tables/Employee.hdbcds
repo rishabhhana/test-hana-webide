@@ -1,0 +1,23 @@
+context Employee {
+
+    /*@@layout{"layoutInfo":{"x":-954,"y":-306.5}}*/
+    entity Employee {
+        key Employee_ID   : String(10);
+            Full_Name     : String(30);
+            Job_Title     : String(50);
+            Department    : String(50);
+            Business_Unit : String(50);
+            Gender        : String(10);
+            Ethinicity    : String(20);
+            Age           : Integer;
+            Hire_Date     : LocalDate;
+    };
+    	entity Employee_Data{
+    	key  Employee_ID   : String(10);
+    	     Employee_City : String(20);
+    	     Joining_Month : String(20);
+    	     Joining_Year  : Integer;
+    };
+    
+
+};

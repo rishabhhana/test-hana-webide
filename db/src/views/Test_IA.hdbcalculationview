@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="Test_IA" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Test_IA"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CV_EMPLOYEE">
+    <resourceUri>CV_EMPLOYEE</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="CV_EMPLOYEE">
+  <attributes>
+    <attribute id="Employee_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Employee_ID_2"/>
+      <keyMapping columnObjectName="CV_EMPLOYEE" columnName="Employee_ID"/>
+    </attribute>
+    <attribute id="Full_Name" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Full_Name_dsf"/>
+      <keyMapping columnObjectName="CV_EMPLOYEE" columnName="Full_Name"/>
+    </attribute>
+    <attribute id="Job_Title" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Job_Title_fsd"/>
+      <keyMapping columnObjectName="CV_EMPLOYEE" columnName="Job_Title"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

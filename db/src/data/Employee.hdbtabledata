@@ -1,0 +1,41 @@
+{
+    "format_version": 1,
+    "imports": [
+            {
+            "target_table": "Employee.Employee",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "Employee.csv",
+                "has_header": true
+            },
+            "column_mappings": {
+            		     
+				"Employee_ID"	: 1,
+				"Full_Name"	: 2,
+				"Job_Title"	: 3,
+				"Department"	: 4,
+				"Business_Unit"	: 5,
+				"Gender"	: 6,
+				"Ethinicity"	: 7,
+				"Age"	: 8,
+				"Hire_Date"	: 9
+				
+            },
+            "import_settings": {
+                "import_columns": [
+                   
+				"Employee_ID",
+				"Full_Name",
+				"Job_Title",
+				"Department",
+				"Business_Unit",
+				"Gender",
+				"Ethinicity",
+				"Age",
+				"Hire_Date"	
+					
+                ]
+            }
+        }
+    ]
+}

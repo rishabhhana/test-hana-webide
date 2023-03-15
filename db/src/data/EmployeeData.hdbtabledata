@@ -1,0 +1,28 @@
+{
+    "format_version": 1,
+    "imports": [
+            {
+            "target_table": "Employee.Employee_Data",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "EmployeeData.csv",
+                "has_header": true
+            },
+            "column_mappings": {
+				"Employee_ID"	: 1,
+				"Employee_City"	: 2,
+				"Joining_Month"	: 3,
+				"Joining_Year"	: 4
+            },
+            "import_settings": {
+                "import_columns": [
+                   
+				"Employee_ID",
+				"Employee_City",
+				"Joining_Month",
+				"Joining_Year"
+                ]
+            }
+        }
+    ]
+}

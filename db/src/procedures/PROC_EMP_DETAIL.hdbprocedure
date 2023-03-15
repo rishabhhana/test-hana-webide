@@ -1,0 +1,31 @@
+PROCEDURE "PROC_EMP_DETAIL"( 
+	IN ip_age INTEGER,
+	OUT var_out TABLE
+	(
+		"Full_Name" NVARCHAR(30),
+		"Job_Title" NVARCHAR(50),
+		"Department" NVARCHAR(50),
+		"Business_Unit" NVARCHAR(50),
+		"Gender" NVARCHAR(10),
+		"Ethinicity" NVARCHAR(20),
+		"Age" INTEGER ,
+		"Employee_City" NVARCHAR(20),
+		"Hire_Date" DATE,
+		"Employee_Tenture" INTEGER
+	)
+)
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+   
+   var_out = 	SELECT A."Full_Name", A."Job_Title", A."Department", A."Business_Unit", 
+				A."Gender", A."Ethinicity", A."Age", B."Employee_City",
+				A."Hire_Date", days_between( A."Hire_Date", CURRENT_DATE) AS "Employee_Tenture"
+			    FROM "Employee.Employee" A
+			    LEFT OUTER JOIN "Employee.Employee_Data" B
+			    ON A."Employee_ID" = B."Employee_ID"
+			   WHERE A."Age" > :ip_age;
+
+END

@@ -1,0 +1,9 @@
+{
+  "SYN_EMPLOYEE": {
+    "target": {
+      "object": "EMPLOYEE",
+      "schema": "BABADRI",
+      "database": "HWX"
+    }
+  }
+}

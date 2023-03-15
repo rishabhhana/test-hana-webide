@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_TEST_INTERSECT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Explore INTERSECT node in CV"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="Supplier_Customer.Supplier">
+    <resourceUri>Supplier_Customer.Supplier</resourceUri>
+  </DataSource>
+  <DataSource id="Supplier_Customer.Customer">
+    <resourceUri>Supplier_Customer.Customer</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Supplier">
+    <viewAttributes>
+      <viewAttribute id="first_name"/>
+      <viewAttribute id="last_name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Supplier_Customer.Supplier"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Customer">
+    <viewAttributes>
+      <viewAttribute id="first_name"/>
+      <viewAttribute id="last_name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Supplier_Customer.Customer"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:IntersectView" id="Intersect_1">
+    <viewAttributes>
+      <viewAttribute id="first_name"/>
+      <viewAttribute id="last_name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Supplier">
+      <mapping xsi:type="Calculation:AttributeMapping" target="first_name" source="first_name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="last_name" source="last_name"/>
+    </input>
+    <input node="Customer">
+      <mapping xsi:type="Calculation:AttributeMapping" target="first_name" source="first_name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="last_name" source="last_name"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Intersect_1">
+  <attributes>
+    <attribute id="first_name" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="first_name"/>
+      <keyMapping columnObjectName="Intersect_1" columnName="first_name"/>
+    </attribute>
+    <attribute id="last_name" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="last_name"/>
+      <keyMapping columnObjectName="Intersect_1" columnName="last_name"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Supplier" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-134" y="311"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Customer" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="311" y="301"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Intersect_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="205"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
