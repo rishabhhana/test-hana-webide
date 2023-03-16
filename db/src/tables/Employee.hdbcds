@@ -17,6 +17,7 @@ context Employee {
     	     Employee_City : String(20);
     	     Joining_Month : String(20);
     	     Joining_Year  : Integer;
+    	     Amt : Decimal(15,2);
     };
     
 

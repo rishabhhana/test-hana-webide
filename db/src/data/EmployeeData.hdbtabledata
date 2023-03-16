@@ -12,7 +12,8 @@
 				"Employee_ID"	: 1,
 				"Employee_City"	: 2,
 				"Joining_Month"	: 3,
-				"Joining_Year"	: 4
+				"Joining_Year"	: 4,
+				"Amt" : 5
             },
             "import_settings": {
                 "import_columns": [
@@ -20,7 +21,8 @@
 				"Employee_ID",
 				"Employee_City",
 				"Joining_Month",
-				"Joining_Year"
+				"Joining_Year",
+				"Amt"
                 ]
             }
         }
